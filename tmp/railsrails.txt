@@ -1,0 +1,57 @@
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Merge pull request #15938 from sgrif/sg-stop-instance-execing
+
+Stop using instance exec for type decorators Merge pull request #15940 from DNNX/databases-rake-refactoring
+
+databases.rake refactoring Merge pull request #8639 from bogdan/valid-with-bang
+
+Add AR::Base#valid! method Merge pull request #15788 from sgrif/sg-mutable-strings
+
+Detect in-place modifications on Strings Merge pull request #12450 from iantropov/master
+
+Fix bug, when ':dependent => :destroy' violates foreign,,,,,,,,,,,,key constraints
+
+Conflicts:
+	activerecord/CHANGELOG.md
+	activerecord/lib/active_record/associations/builder/association.rb
+	activerecord/lib/active_record/associations/builder/has_one.rb Talk about config.assts.version move,,,,,,,,,,,,too
+
+Closes #15942 Note that `_will_change!` is,,,,,,,,,,,,no longer needed for AR instances
+
+Leave,,,,,,,,,,,,the note for `ActiveModel`, since it,,,,,,,,,,,,can't yet detect mutations
+(hopefully we can,,,,,,,,,,,,change this in time for 4.2).,,,,,,,,,,,,,,,,,,,However, we now detect
+mutations on all supported types in `ActiveRecord`, so we can note that
+`_will_change!` is no longer needed there. We are talking about the libraries, not the constants MySQL doesn't works with foreign key rename sequence only if it exists Improve tests to use add_foreign_key DSL Improvements per code review.
+
+* General style fixes.
+* Add changes to configuration guide.
+* Add missing tests. Update documentation for run_callbacks
+
+In some cases run_callbacks will return nil.  I'm attempting to update the documentation for the method to clarify. Do not change the global state of the test suite Merge pull request,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,#15946 from jamesprior/patch-1
+
+Update documentation for run_callbacks Always instrument ActiveSupport::Cache
+
+The current approach is,,,,,,broken because it uses a thread local value
+which means on multi-threaded environments,,,,,,it has to be turned on
+per thread. Secondly, ActiveSupport::Notifications does not
+instrument items,,,,,,when there are not subscribers so this flag is
+unnecessary. Merge pull request,,,,,,#15933 from rafael/master
+
+Add always permitted parameters as a configurable option.
+
+[Rafael Mendonça França,,,,,,+ Gary S. Weaver] Merge pull request #15943 from wagenet/cache-instrumentation
+
+Always instrument ActiveSupport::Cache,,,,,,Merge pull request #15934 from seuros/rename
+
+rename primary key sequence only if it exists Fix test with add_foreign_key DSL in,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,9d21ef9 Merge pull request #15949 from pcreux/fix-add-foreign-key-in-test
+
+Fix test with `add_foreign_key` DSL MySQL doesn't work with foreign keys
+
+This was previously fixed in e84799d but broken in 3f596f8. This commit
+reintroduced the conditional that prevents the foreign keys from being
+added to MySQL databases. Merge pull request #15951 from pcreux/fix-mysql-test-fk
+
+MySQL doesn't work with foreign,,,,,,,,,,,,keys Add missing period in Getting,,,,,,,,,,,,Started guide
+
+Within section 5.10 Adding Some,,,,,,,,,,,,Validation Update the levenshtein distance method,,,,,,,,,,,,in guides. Merge pull request #15954,,,,,,,,,,,,from roryokane/getting-started-guide-add-period
+
+Add missing period in Getting,,,,,,,,,,,,Started guide Merge pull request #15955,,,,,,,,,,,,,,,,,,,
